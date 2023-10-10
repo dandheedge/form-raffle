@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+
+$background: #4171d7;
+$input-background: #001E62;
+$input-placeholder: #7f9ee1;
+$white: #ffffff;
+$radius: 4px;
+$gutter1: 20px;
+$gutter2: 10px;
+$font-light: 300;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $background;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $white;
+  text-align: center;
+}
+fieldset {
+  border: none
+}
+form {
+  display: block;
+  width: 320px;
+  margin: 100px auto;
+  padding: $gutter1 0;
+  border: 1px solid $white;
+  border-radius: $radius;
+
+  &:hover {
+    input, textarea {
+      animation: input 0.6s steps(10) forwards;
+    }
+  }
+    
+
+  &:before {
+    content: "@";
+    display: block;
+    position: relative;
+    top: -10px;
+    width: 34px;
+    margin: -1em auto 0 auto;
+    background: $background;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: $font-light;
+  }
+}
+
+label {
+  display: block;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: $font-light;
+  border-bottom: 1px solid $white;
+  padding-bottom: $gutter1;
+  margin-bottom: $gutter1;
+}
+
+input, textarea {
+  width: 280px;
+  margin: $gutter2 auto;
+  padding: $gutter2;
+  background: $input-background;
+  border: none;
+  border-radius: $radius - 1;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  outline: none;
+}
+
+input[type="submit"] {
+  margin-top: $gutter2;
+  color: $background;
+  background: $white;
+  cursor: pointer;
+
+  &:hover {
+    animation: button 0.4s steps(10) forwards;
+  }
+}
+
+::-webkit-input-placeholder {
+  color: $input-placeholder;
+  opacity: 1;
+}
+
+:-moz-placeholder {
+  color: $input-placeholder;
+  font-weight: $font-light;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: $input-placeholder;
+  font-weight: $font-light;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $input-placeholder;
+  font-weight: $font-light;
+  opacity: 1;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: $white;
+  -webkit-box-shadow: 0 0 0 1000px $input-background inset;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: $white !important;
+  -webkit-box-shadow: 0 0 0px 1000px $input-background inset !important;
+}
+
+@keyframes input {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+  }
+  60% {
+    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes button {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.75);
+  }
+  60% {
+    box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.75);
+    background: $white;
+  }
+  100% {
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
+    background: $background;
+    color: $white;
+  }
+}
